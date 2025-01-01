@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Silent Journey - Short Trip</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Short Trip" />
+    <meta property="og:description"
+        content="An hand-drawn, interactive illustration about a tram driver, mountains, cloaked cats and everything in between." />
+    <link rel="stylesheet" type="text/css" href="./static/app20201224.css">
+    <link rel="icon" type="image/png" href="./static/icon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./static/icon/favicon.svg" />
+    <link rel="shortcut icon" href="./static/icon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./static/icon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Silent Journey" />
+    <link rel="manifest" href="./static/icon/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./static/icon/web-app-manifest-192x192.png">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        .fixed {
+            position: fixed;
+        }
+
+        .fullscreen {
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        #sound-playback {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #sound-playback>.play {
+            background-color: white;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 4px;
+            max-width: 200px;
+            margin: auto;
+            display: block;
+            border: 1px solid #cecece;
+        }
+
+        #actions {
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            transition: height 0.5s;
+            height: 0px;
+        }
+
+        #actions>.action {
+            display: block;
+            margin: auto;
+            padding-right: 8px;
+        }
+
+        #actions.active {
+            height: 32px;
+        }
+    </style>
+</head>
+
+<body class="disable-select">
+
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TNB957R" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+    </noscript>
+
+    <div id="canvas-container" class="disable-select"></div>
+    <div id="credits" class="disable-select">
+        <div class="center">
+            <p>Hold left or right to move.</p>
+            <p>If you would like to support Short Trip, you're welcome (but not obliged) to make a contribution
+                <a href="https://paypal.me/alexanderperrin">here.</a>
+            </p>
+            <p>Quality Mode:
+                <span class="quality-setting selected" id="default-button">Default</span>
+                <span class="quality-setting" id="eco-button">Eco</span>
+            </p>
+            <p>Sound:
+                <span class="quality-setting selected" id="mute-off">ON</span>
+                <span class="quality-setting" id="mute-on">OFF</span>
+            </p>
+        </div>
+    </div>
+
+    <div id="controls" class="text-center fixed fullscreen disable-select">
+        <p style="font-size: 24px; margin-top: 66px;"> Game Instructions </p>
+        <p style="margin-bottom: 66px;">
+            &lt;-- &nbsp; Tap or hold the left or right arrow keys on the keyboard to move the train. &nbsp; --&gt;
+        </p>
+        <div id="sound-playback">
+            <div class="play" id="resume-audio">
+                <p>Tap to enable audio</p>
+            </div>
+            <div class="mute" id="mute-audio">
+                <p>Or play without sound</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="actions" class="disable-select">
+        <span class="action">Audio:
+            <span class="quality-setting selected" id="enable-audio">ON</span>
+            <span class="quality-setting" id="disable-audio">OFF</span>
+        </span>
+    </div>
+    <div id="loader">
+        <div class="label">
+            <span id="loader-content">LOADING...
+                <span id="loading-message">CODE</span>
+                <span id="loading-percent"></span>
+            </span>
+            <img class="spinner" src="static/img/spinner.svg">
+        </div>
+    </div>
+    <script src="static/bundle20201224.js" type="cfcbfb21f6db71054ffaa74a-text/javascript"></script>
+    <script type="cfcbfb21f6db71054ffaa74a-text/javascript">
+    </script>
+    <script src="./static/rocket-loader.min.js" data-cf-settings="cfcbfb21f6db71054ffaa74a-|49" defer></script>
+</body>
+
+</html>
