@@ -2,15 +2,22 @@
 <html>
 
 <head>
-    <title>Silent Journey - Short Trip</title>
+    <title>Silent Journey - Hand-Drawn Interactive Train Game</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <meta property="og:url" content="" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Short Trip" />
+    <meta name="description"
+        content="Silent Journey is a relaxing interactive train game in a hand-drawn world. Control the train, explore stations, pick up passengers, and immerse yourself in the stunning landscapes.">
+    <meta name="keywords"
+        content="Silent Journey, hand-drawn game, train simulation, relaxing games, web games,js game, scenic art, interactive storytelling">
+    <meta property="og:url" content="//game-short-trip.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content=" Silent Journey - Hand-Drawn Interactive Train Game" />
     <meta name="google-adsense-account" content="ca-pub-7317482270463121">
     <meta property="og:description"
-        content="An hand-drawn, interactive illustration about a tram driver, mountains, cloaked cats and everything in between." />
+        content="Immerse yourself in the hand-drawn world of Silent Journey, an interactive game where you control a train and enjoy serene landscapes.">
+    <meta property="og:image" content="./static/icon/game-preview.png">
+    <meta property="og:image:width" content="1207">
+    <meta property="og:image:height" content="632">
     <link rel="stylesheet" type="text/css" href="./static/app20201224.css">
     <link rel="icon" type="image/png" href="./static/icon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="./static/icon/favicon.svg" />
@@ -23,6 +30,26 @@
     <meta name="theme-color" content="#ffffff">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7317482270463121"
         crossorigin="anonymous"></script>
+
+    <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "VideoGame",
+                "name": "Silent Journey",
+                "description": "Silent Journey is a hand-drawn interactive train simulation game where players pick up passengers, explore scenic landscapes, and journey across a peaceful world.",
+                "image": "//game-short-trip.vercel.app/static/icon/game-preview.png",
+                "author": {
+                    "@type": "Person",
+                    "name": "somepx"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Silent Journey Team"
+                },
+                "applicationCategory": "Game",
+                "about": ["train simulation", "interactive story", "hand-drawn art"]
+            }
+            </script>
     <style>
         .fixed {
             position: fixed;
@@ -81,10 +108,6 @@
 
 <body class="disable-select">
 
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TNB957R" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe>
-    </noscript>
 
     <div id="canvas-container" class="disable-select"></div>
     <div id="credits" class="disable-select">
@@ -105,7 +128,7 @@
     </div>
 
     <div id="controls" class="text-center fixed fullscreen disable-select">
-        <p style="font-size: 24px; margin-top: 66px;"> Game Instructions </p>
+        <h1 style="font-size: 24px; margin-top: 66px;"> Game Instructions </h1>
         <p style="margin-bottom: 66px;">
             &lt;-- &nbsp; Tap or hold the left or right arrow keys on the keyboard to move the train. &nbsp; --&gt;
         </p>
@@ -119,11 +142,37 @@
         </div>
     </div>
     </div>
-    <div id="actions" class="disable-select">
-        <span class="action">Audio:
-            <span class="quality-setting selected" id="enable-audio">ON</span>
-            <span class="quality-setting" id="disable-audio">OFF</span>
-        </span>
+    <div id="actions" class="disable-select" style="display: flex; justify-content: space-around; align-items: center;">
+        <div>
+            <span class="action">Audio:
+                <span class="quality-setting selected" id="enable-audio">ON</span>
+                <span class="quality-setting" id="disable-audio">OFF</span>
+            </span>
+        </div>
+
+        <div class="social-buttons" >
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 50 50">
+                <path
+                    d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z">
+                </path>
+            </svg>
+            <a href="https://twitter.com/intent/tweet?text=Play%20Silent%20Journey!%20Experience%20a%20relaxing%20train%20game&url=//game-short-trip.vercel.app/"
+                target="_blank">Share on Twitter</a>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 50 50">
+                <path
+                    d="M25,3C12.85,3,3,12.85,3,25c0,11.03,8.125,20.137,18.712,21.728V30.831h-5.443v-5.783h5.443v-3.848 c0-6.371,3.104-9.168,8.399-9.168c2.536,0,3.877,0.188,4.512,0.274v5.048h-3.612c-2.248,0-3.033,2.131-3.033,4.533v3.161h6.588 l-0.894,5.783h-5.694v15.944C38.716,45.318,47,36.137,47,25C47,12.85,37.15,3,25,3z">
+                </path>
+            </svg>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://game-short-trip.vercel.app/" target="_blank">
+                Share on Facebook
+            </a>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABgUlEQVR4nL2VP0sDQRDFf0aIrdqooI2V2CminSCaTxAsBdGk0GCtdoJfQTCtrTbmxErRxkLUTxAEO4MRMWrrPwae4bjsJbnk4oOBY2b2vdvZ2Vn4RySALOABZy1aAcgAXS7yE+AHKLYhUBSHJ84qsgqsxVCJdXGt+p2e1ONCUeWq4lIWhnHgCHiSHQJjdfJr+OoJTAEfwCtwILPvd2AyDoEb4BEY9vlGgBJw3apAUl0wpAPbdJBsKTag3GQUAWvZW2BBJGmHQFoxy7kLHGpDgZTqXhHJvEPgT7yi3FQUAcM0UAa+gF6HQJ9iZeUSVcBqeq9yheEUeAB6ogp0A3ngG5itIzCnnH2taVogr/ru0Bi7ys1HEdjWoiv1fBhG1W3BVm4okNCwegPOgWVg0BfvBxaBC93qpcCIbvombwCf+sNnYE9Wks9iuXZHRS8woYn7IrPumQlpXydfJ8b1sd+R0ZbtsWgXOXGtEDhUL8Yns+B6l81hnWNba1XA1hpHDXnH8AsbzK/0FOzaNwAAAABJRU5ErkJggg=="
+                alt="external-snapchat-social-media-tanah-basah-basic-outline-tanah-basah">
+            <a href="https://www.snapchat.com/scan?attachmentUrl=https://game-short-trip.vercel.app/" target="_blank">
+                Share on Snapchat
+            </a>
+
+        </div>
     </div>
     <div id="loader">
         <div class="label">
